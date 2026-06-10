@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -14,23 +12,70 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Google Sheets Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 1. Create a Google Sheet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a new Google Sheet and add the following columns:
 
-## Learn More
+Name | Email | LinkedIn | FullTime | Team | Startup | Timestamp
 
-To learn more about Next.js, take a look at the following resources:
+## 2. Create Apps Script
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Extensions → Apps Script
 
-## Deploy on Vercel
+Paste:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```javascript
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  const data = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    data.name || "",
+    data.email || "",
+    data.linkedin || "",
+    data.fullTime || "",
+    data.team || "",
+    data.startup || "",
+    new Date()
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ success: true }))
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+```
+
+## 3. Deploy
+
+Deploy → New Deployment → Web App
+
+Execute as:
+
+* Me
+
+Who has access:
+
+* Anyone
+
+Copy the generated Web App URL.
+
+## 4. Configure Environment Variable
+
+Create `.env.local`
+
+```env
+NEXT_PUBLIC_GOOGLE_SCRIPT_URL=<WEB_APP_URL>
+```
+
+## 5. Restart Application
+
+```bash
+npm run dev
+```
+
+Form submissions will now be stored in the configured Google Sheet.
