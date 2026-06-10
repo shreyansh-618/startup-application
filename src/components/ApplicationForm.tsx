@@ -22,17 +22,29 @@ export default function ApplicationForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const honeypotRef = useRef<HTMLInputElement>(null);
+  const submittingRef = useRef(false);
 
   function validate(): FormErrors {
     const errs: FormErrors = {};
-    if (!formData.name.trim()) errs.name = "Name is required";
-    if (!formData.email.trim()) {
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const desc = formData.description.trim();
+    if (!name) {
+      errs.name = "Name is required";
+    } else if (name.length > 100) {
+      errs.name = "Name must be under 100 characters";
+    }
+    if (!email) {
       errs.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (email.length > 254) {
+      errs.email = "Email must be under 254 characters";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       errs.email = "Please enter a valid email";
     }
-    if (!formData.description.trim()) {
+    if (!desc) {
       errs.description = "Startup description is required";
+    } else if (desc.length > 2000) {
+      errs.description = "Description must be under 2000 characters";
     }
     return errs;
   }
@@ -51,6 +63,7 @@ export default function ApplicationForm() {
     e.preventDefault();
 
     if (honeypotRef.current?.value) return;
+    if (submittingRef.current) return;
 
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -58,9 +71,12 @@ export default function ApplicationForm() {
       return;
     }
 
+    submittingRef.current = true;
     setStatus("submitting");
 
     const result = await submitApplication(formData);
+
+    submittingRef.current = false;
 
     if (result.success) {
       setStatus("success");
