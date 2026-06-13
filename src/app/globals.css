@@ -144,10 +144,23 @@ nav {
   color: var(--color-paper);
 }
 
-.brand svg {
+.brand-icon {
   height: 22px;
   width: auto;
   display: block;
+}
+
+.brand-text {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+}
+
+.brand {
+  gap: 10px;
 }
 
 .nav-r {
@@ -1166,8 +1179,12 @@ footer {
   flex-wrap: wrap;
 }
 
-.foot .brand svg {
+.foot .brand-icon {
   height: 22px;
+}
+
+.foot .brand-text {
+  font-size: 19px;
 }
 
 .foot p {
@@ -1276,12 +1293,39 @@ footer {
     padding: 0 22px;
   }
 
+  nav {
+    padding: 16px 22px;
+  }
+
   .seatpill {
     display: none;
   }
 
   .hero {
     padding: 130px 0 60px;
+  }
+
+  .tsheet {
+    width: 100%;
+    transform: none;
+  }
+
+  .ts-stamp {
+    right: 4px;
+    bottom: 50px;
+    transform: rotate(-6deg) scale(0.85);
+  }
+
+  .loaded .ts-stamp {
+    transform: rotate(-6deg) scale(0.85);
+  }
+
+  .pick .p {
+    padding: 22px;
+  }
+
+  .q .ans-in {
+    padding: 0 0 24px 22px;
   }
 
   .frow {
@@ -1299,6 +1343,29 @@ footer {
 
   .trust .wrap {
     gap: 14px;
+  }
+
+  .foot {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .foot .fr {
+    text-align: center;
+  }
+}
+
+@media (hover: none) {
+  .term:hover {
+    padding-left: 0;
+  }
+
+  .term:hover::before {
+    opacity: 0;
+  }
+
+  .pick .p:hover {
+    transform: none;
   }
 }
 

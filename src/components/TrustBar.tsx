@@ -3,7 +3,7 @@ export default function TrustBar() {
     { label: "users powered", value: "2M+" },
     { label: "MAU, zero downtime", value: "1M+" },
     { label: "startups shipped", value: "100+" },
-    { label: "AI built for", value: "unicorns" },
+    { label: "unicorns", value: "AI built for" },
   ];
 
   return (
