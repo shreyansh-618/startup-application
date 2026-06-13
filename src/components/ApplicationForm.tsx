@@ -163,7 +163,7 @@ export default function ApplicationForm() {
                     placeholder="Jane Founder"
                   />
                   {errors.name && (
-                    <p style={{ color: "var(--color-accent)", fontSize: 12, marginTop: 4, fontFamily: "var(--font-mono)" }}>
+                    <p style={{ color: "var(--color-accent)", fontSize: 12, marginTop: 4, fontFamily: "'Spline Sans Mono', monospace" }}>
                       {errors.name}
                     </p>
                   )}
@@ -178,7 +178,7 @@ export default function ApplicationForm() {
                     placeholder="jane@startup.com"
                   />
                   {errors.email && (
-                    <p style={{ color: "var(--color-accent)", fontSize: 12, marginTop: 4, fontFamily: "var(--font-mono)" }}>
+                    <p style={{ color: "var(--color-accent)", fontSize: 12, marginTop: 4, fontFamily: "'Spline Sans Mono', monospace" }}>
                       {errors.email}
                     </p>
                   )}
@@ -234,7 +234,7 @@ export default function ApplicationForm() {
                   rows={3}
                 />
                 {errors.description && (
-                  <p style={{ color: "var(--color-accent)", fontSize: 12, marginTop: 4, fontFamily: "var(--font-mono)" }}>
+                  <p style={{ color: "var(--color-accent)", fontSize: 12, marginTop: 4, fontFamily: "'Spline Sans Mono', monospace" }}>
                     {errors.description}
                   </p>
                 )}
@@ -253,7 +253,7 @@ export default function ApplicationForm() {
               </div>
 
               {status === "error" && (
-                <p style={{ color: "var(--color-accent)", fontSize: 13, marginTop: 16, fontFamily: "var(--font-mono)" }}>
+                <p style={{ color: "var(--color-accent)", fontSize: 13, marginTop: 16, fontFamily: "'Spline Sans Mono', monospace" }}>
                   Something went wrong. Please try again or email us directly.
                 </p>
               )}

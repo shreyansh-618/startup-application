@@ -1,19 +1,11 @@
 export default function TrustBar() {
-  const items = [
-    { label: "users powered", value: "2M+" },
-    { label: "MAU, zero downtime", value: "1M+" },
-    { label: "startups shipped", value: "100+" },
-    { label: "unicorns", value: "AI built for" },
-  ];
-
   return (
     <div className="trust">
       <div className="wrap">
-        {items.map((item) => (
-          <div key={item.value + item.label} className="t">
-            <b>{item.value}</b> {item.label}
-          </div>
-        ))}
+        <div className="t"><b>2M+</b> users powered</div>
+        <div className="t"><b>1M+</b> MAU, zero downtime</div>
+        <div className="t"><b>100+</b> startups shipped</div>
+        <div className="t">AI built for <b>unicorns</b></div>
       </div>
     </div>
   );

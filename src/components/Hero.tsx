@@ -21,7 +21,7 @@ export default function Hero() {
             <div>
               <div className="hero-meta">
                 <span className="kicker">
-                  <span className="dot" /> Venture Studio — by selection
+                  <span className="tick">●</span> Venture Studio — by selection
                 </span>
                 <span className="kicker">
                   Y Combinator · Forbes 30U30

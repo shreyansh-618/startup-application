@@ -9,7 +9,7 @@ export default function Footer() {
             <Logo />
           </a>
           <p>We don&apos;t take clients. We pick five.</p>
-          <div className="fr">&copy; 2026 WhatBytes<br />357 Bay St., Toronto, ON M5H 4A6</div>
+          <div className="fr">&copy; 2026 WhatBytes &middot; Toronto<br />357 Bay St., ON M5H 4A6</div>
         </div>
       </div>
     </footer>

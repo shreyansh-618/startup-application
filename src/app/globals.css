@@ -13,9 +13,6 @@
   --color-receipt: #F1ECDE;
   --color-receipt-ink: #181610;
   --color-receipt-dim: #6B6657;
-  --font-sans: var(--font-instrument-sans), "Instrument Sans", sans-serif;
-  --font-serif: var(--font-instrument-serif), "Instrument Serif", serif;
-  --font-mono: var(--font-spline-sans-mono), "Spline Sans Mono", monospace;
   --ease-spring: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-spring-out: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
@@ -33,7 +30,7 @@ html {
 body {
   background: var(--color-ink);
   color: var(--color-paper);
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 17px;
   line-height: 1.5;
   overflow-x: hidden;
@@ -53,7 +50,7 @@ a {
 
 /* ===== UTILITY ===== */
 .kicker {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 11.5px;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -144,23 +141,10 @@ nav {
   color: var(--color-paper);
 }
 
-.brand-icon {
+.brand svg {
   height: 22px;
   width: auto;
   display: block;
-}
-
-.brand-text {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 19px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  display: block;
-}
-
-.brand {
-  gap: 10px;
 }
 
 .nav-r {
@@ -170,7 +154,7 @@ nav {
 }
 
 .seatpill {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 11.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -190,7 +174,7 @@ nav {
 }
 
 .cta {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -209,7 +193,7 @@ nav {
 
 /* ===== BUTTONS ===== */
 .btn {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 15px;
   padding: 15px 26px;
@@ -273,11 +257,8 @@ nav {
   flex-wrap: wrap;
 }
 
-.hero-meta .dot {
-  width: 6px;
-  height: 6px;
-  background: var(--color-accent);
-  border-radius: 50%;
+.tick {
+  color: var(--color-accent);
 }
 
 .hero h1 {
@@ -307,7 +288,7 @@ nav {
 }
 
 .hero h1 em {
-  font-family: var(--font-serif);
+  font-family: 'Instrument Serif', serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -351,7 +332,7 @@ nav {
 
 .hero-note {
   margin-top: 22px;
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -376,7 +357,7 @@ nav {
   width: 370px;
   background: var(--color-receipt);
   color: var(--color-receipt-ink);
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12.5px;
   line-height: 1.6;
   padding: 30px 30px 24px;
@@ -400,7 +381,7 @@ nav {
 }
 
 .ts-title {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 22px;
   letter-spacing: 0.02em;
@@ -437,7 +418,7 @@ nav {
 }
 
 .seats-num {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 44px;
   line-height: 0.85;
@@ -516,7 +497,7 @@ nav {
 }
 
 .phase .pname {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 15px;
 }
@@ -529,7 +510,7 @@ nav {
 }
 
 .phase .pamt {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: var(--color-accent);
@@ -543,7 +524,7 @@ nav {
   border: 2.5px solid var(--color-accent);
   color: var(--color-accent);
   border-radius: 5px;
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   padding: 7px 13px;
   text-align: center;
@@ -591,7 +572,7 @@ nav {
 }
 
 .trust .t {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -634,14 +615,14 @@ section {
 }
 
 .sec-head .no {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12px;
   color: var(--color-accent);
   letter-spacing: 0.1em;
 }
 
 .sec-head .lab {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -661,7 +642,7 @@ section {
 }
 
 .sec-title em {
-  font-family: var(--font-serif);
+  font-family: 'Instrument Serif', serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -713,7 +694,7 @@ section {
 }
 
 .term .tno {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12px;
   color: var(--color-accent);
   letter-spacing: 0.1em;
@@ -733,7 +714,7 @@ section {
 }
 
 .term .tag {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--color-accent);
@@ -774,7 +755,7 @@ section {
   place-items: center;
   margin-bottom: 18px;
   color: var(--color-accent);
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 13px;
 }
 
@@ -820,7 +801,7 @@ section {
 }
 
 .apply-head h2 em {
-  font-family: var(--font-serif);
+  font-family: 'Instrument Serif', serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -856,14 +837,14 @@ section {
 }
 
 .appdoc .doc-head .dt {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 21px;
   letter-spacing: -0.01em;
 }
 
 .appdoc .doc-head .ds {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 10.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -872,7 +853,7 @@ section {
 }
 
 .appdoc .doc-head .ref {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 10.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -887,7 +868,7 @@ section {
 
 .field label {
   display: block;
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 10.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -907,7 +888,7 @@ section {
   border: 1.5px solid rgba(24, 22, 16, 0.16);
   border-radius: 5px;
   padding: 13px 15px;
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 16px;
   color: var(--color-receipt-ink);
   transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
@@ -968,7 +949,7 @@ section {
 .appdoc .btn-submit {
   background: var(--color-accent);
   color: #fff;
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   padding: 16px 30px;
@@ -993,7 +974,7 @@ section {
 }
 
 .appdoc .fine {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 10.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1045,7 +1026,7 @@ section {
 }
 
 .success .seal span {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.04em;
@@ -1054,7 +1035,7 @@ section {
 }
 
 .success h3 {
-  font-family: var(--font-sans);
+  font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
   font-size: 1.7rem;
   color: var(--color-receipt-ink);
@@ -1102,7 +1083,7 @@ section {
 }
 
 .q .qno {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 12px;
   color: var(--color-accent);
   letter-spacing: 0.1em;
@@ -1179,12 +1160,8 @@ footer {
   flex-wrap: wrap;
 }
 
-.foot .brand-icon {
+.foot .brand svg {
   height: 22px;
-}
-
-.foot .brand-text {
-  font-size: 19px;
 }
 
 .foot p {
@@ -1193,7 +1170,7 @@ footer {
 }
 
 .foot .fr {
-  font-family: var(--font-mono);
+  font-family: 'Spline Sans Mono', monospace;
   font-size: 11.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
